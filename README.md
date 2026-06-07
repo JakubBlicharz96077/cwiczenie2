@@ -1,46 +1,48 @@
 # cwiczenie2
+---------------------------------
 
-Quick start
------------
+PowerShell (Windows):
 
-1. Create and activate venv (Git Bash):
+```powershell
+.
+# cwiczenie2
+Szybki start
+
+PowerShell:
+
+```powershell
+.\scripts\create_venv.ps1
+.\.venv\Scripts\Activate
+pytest -q
+```
+
+Git Bash / Linux:
 
 ```bash
 bash scripts/create_venv.sh
 source .venv/Scripts/activate
+pytest -q
 ```
 
-2. Install editable package and requirements (if not done by the script):
+Uruchamianie lint i testów
+
+PowerShell (po aktywacji venv):
+
+```powershell
+.\scripts\format_check.ps1
+.\scripts\lint.ps1
+.\scripts\test.ps1
+```
+
+Git Bash / Linux:
 
 ```bash
-.venv/Scripts/python.exe -m pip install -e .
-.venv/Scripts/python.exe -m pip install -r requirements.txt
+bash scripts/format_check.sh
+bash scripts/lint.sh
+bash scripts/test.sh
 ```
 
-3. Run tests:
+CI
 
-```bash
-.venv/Scripts/python.exe -m pytest -q
-```
-
-Helper scripts
---------------
-
-- `scripts/create_venv.sh` / `scripts/create_venv.ps1` – create venv & install deps
-- `scripts/test.sh` / `scripts/test.ps1` – run pytest
-- `scripts/format.sh` / `scripts/format.ps1` – run black formatter
-- `scripts/format_check.sh` / `scripts/format_check.ps1` – check formatting
-- `scripts/lint.sh` / `scripts/lint.ps1` – run pylint
-- `scripts/clean.sh` / `scripts/clean.ps1` – clean repo (.venv, build, __pycache__)
-
-Project status (against excercise.md):
-
-- Krok 1: GitHub repo / branches — not applicable locally
-- Krok 2: Program + tests — DONE (package in `src/simplecalc`, tests in `tests/`)
-- Krok 3: black + pylint config — DONE (`pyproject.toml`)
-- Krok 4: helper scripts — DONE (`scripts/`)
-- Krok 5: CI workflow — TODO (example workflow file can be added)
-- Krok 6..9: documentation, validation, submission — partial (README updated)
-
-If you want I can add the GitHub Actions workflow file and run a local lint/test check.
-# cwiczenie2
+Plik: `.github/workflows/python-app.yml` — na push/PR do `main` lub `develop` uruchamia: tworzenie venv, sprawdzenie formatu (black), pylint i pytest.
+- `src/cli.py` — CLI
