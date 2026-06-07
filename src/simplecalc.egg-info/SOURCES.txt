@@ -1,4 +1,5 @@
 README.md
+pyproject.toml
 setup.py
 src/simplecalc/__init__.py
 src/simplecalc/cli.py

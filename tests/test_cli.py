@@ -1,4 +1,4 @@
-from simplecalc.cli import run
+from cli import run
 
 
 def test_cli_no_args():
