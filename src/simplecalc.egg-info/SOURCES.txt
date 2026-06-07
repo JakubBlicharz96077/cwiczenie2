@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+src/simplecalc/__init__.py
+src/simplecalc/cli.py
+src/simplecalc/logic.py
+src/simplecalc.egg-info/PKG-INFO
+src/simplecalc.egg-info/SOURCES.txt
+src/simplecalc.egg-info/dependency_links.txt
+src/simplecalc.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_logic.py
